@@ -56,9 +56,7 @@ const App = () => {
               <br />
               currently studying at El Camino College.
               <br />
-              While you're here feel free to click these blocks,
-              <br />
-              including this one!
+              While you're here feel free to click these blocks.
             </>
           }
           image="profile.jpeg"
@@ -140,7 +138,7 @@ const App = () => {
             alignSelf: 'flex-start',
           }}
           title="LinkedIn"
-          description={<>Visit my profile <br /> on LinkedIn! Feel free to connect!</>}
+          description={<>Visit my profile on LinkedIn!<br /> Feel free to connect!</>}
           link="https://www.linkedin.com/in/juan-ventura-romero/"
         />
         <BentoItem
@@ -165,8 +163,9 @@ const App = () => {
             <>
               A physics simulator for a loop-de-loop roller coaster.
               <br />
-              built with VPython.
-              <br /> Click to see open the Repository!
+              Built with VPython.
+              <br /> 
+              Click to see open the Repository!
             </>
           }
           image="family-guy.gif"
@@ -195,7 +194,7 @@ const App = () => {
           description={
             <>
               Check out my resume <br />
-              to see my experience and skills!
+              to see my experience and more of my skills!
             </>
           }
           link="/juan-ventura-romero.pdf"

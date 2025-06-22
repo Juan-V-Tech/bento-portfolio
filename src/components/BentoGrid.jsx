@@ -1,7 +1,18 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
+import React from 'react';
+
+const MotionGridItem = motion(Grid);
 
 const BentoGrid = ({ children }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -30,7 +41,25 @@ const BentoGrid = ({ children }) => {
           }
         }}
       >
-        {children}
+        {React.Children.map(children, (child, index) => {
+          if (!React.isValidElement(child)) return null;
+          
+          return (
+            <MotionGridItem
+              item
+              initial={{ y: 100, opacity: 0 }}
+              animate={isLoaded ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+              transition={{ 
+                duration: .85, 
+                delay: index * 0.4,
+                ease: "easeOut" 
+              }}
+              {...(child.props.gridItemProps || {})}
+            >
+              {child}
+            </MotionGridItem>
+          );
+        })}
       </Grid>
     </Box>
   );

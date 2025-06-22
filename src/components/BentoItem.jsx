@@ -14,7 +14,7 @@ const BentoItem = ({
   ...rest
 }) => {
   const internalStyle = {
-    background: 'linear-gradient(145deg, rgba(44,44,44,0.7), rgba(30,30,30,0.7))', // semi-transparent
+    background: 'linear-gradient(145deg, rgba(44,44,44,0.7), rgba(30,30,30,0.7))', 
     borderRadius: '12px',
     padding: '1.2rem',
     minWidth: '200px',
@@ -31,7 +31,8 @@ const BentoItem = ({
     outline: '2px solid #59B2D1',
     outlineOffset: '-2px',
     cursor: onClick ? 'pointer' : undefined,
-    backdropFilter: 'blur(3px)', // optional: glass effect
+    backdropFilter: 'blur(3px)',
+    overflow: 'hidden',
     ...style,
   };
 
@@ -40,15 +41,16 @@ const BentoItem = ({
     marginRight: image ? '1rem' : 0,
     minWidth: 0,
     overflow: 'hidden',
+    width: '100%', 
   };
 
   const titleStyle = {
-    margin: 0,
+    margin: '0 0 0.5rem 0',
     fontSize: '1.1rem',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    maxWidth: '100%',
+    width: '100%',
   };
 
   const descriptionStyle = {
@@ -57,7 +59,22 @@ const BentoItem = ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    width: '100%',
+  };
+
+  const imageContainerStyle = {
+    flexShrink: 0, 
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxWidth: '30%', 
+  };
+
+  const defaultImgStyle = {
     maxWidth: '100%',
+    maxHeight: '100px',
+    objectFit: 'contain',
+    ...imgstyle,
   };
 
   const content = (
@@ -72,11 +89,13 @@ const BentoItem = ({
         {children}
       </div>
       {image && (
-        <img
-          src={image}
-          alt={imgalt}
-          style={imgstyle}
-        />
+        <div style={imageContainerStyle}>
+          <img
+            src={image}
+            alt={imgalt || ""}
+            style={defaultImgStyle}
+          />
+        </div>
       )}
     </div>
   );
@@ -87,7 +106,7 @@ const BentoItem = ({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        style={{ textDecoration: 'none', display: 'inline-block' }}
+        style={{ textDecoration: 'none', display: 'inline-block', width: '100%' }}
         onMouseEnter={e => (e.currentTarget.firstChild.style.transform = 'scale(1.05)')}
         onMouseLeave={e => (e.currentTarget.firstChild.style.transform = 'scale(1)')}
       >
@@ -101,7 +120,7 @@ const BentoItem = ({
       <a  
         target="_blank"
         rel="noopener noreferrer"
-        style={{ textDecoration: 'none', display: 'inline-block' }}
+        style={{ textDecoration: 'none', display: 'inline-block', width: '100%' }}
         onMouseEnter={e => (e.currentTarget.firstChild.style.transform = 'scale(1.05)')}
         onMouseLeave={e => (e.currentTarget.firstChild.style.transform = 'scale(1)')}
       >
