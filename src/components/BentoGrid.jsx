@@ -5,21 +5,30 @@ const BentoGrid = ({ children }) => {
   return (
     <Box
       sx={{
-        width: { xs: '100vw', sm: '90vw', md: '70vw', lg: '60vw' },
+        width: '100%', 
+        maxWidth: { sm: '90vw', md: '70vw', lg: '60vw' }, 
         mx: 'auto',
         minHeight: '100vh',
-        px: { xs: 0.5, sm: 2 },
-        py: { xs: 2, sm: 4 },
+        px: { xs: 0.5, sm: 2 }, 
+        py: { xs: 0.5, sm: 4 },
         display: 'flex',
         alignItems: 'center',
+        overflowX: 'hidden',
+        boxSizing: 'border-box',
       }}
     >
       <Grid
         container
-        spacing={{ xs: 1, sm: 2 }}
+        spacing={{ xs: 0.5, sm: 2 }}
         justifyContent="center"
         alignItems="center"
-        style={{ width: '100%' }}
+        sx={{
+          width: '100%',
+          flexDirection: { xs: 'column', sm: 'row' },
+          '& > *': { 
+            maxWidth: { xs: '95%', sm: 'auto' },
+          }
+        }}
       >
         {children}
       </Grid>
