@@ -44,12 +44,16 @@ const App = () => {
   const handleCookieClick = () => setCookies((c) => c + 1);
   const handleSkillsClick = () => setSkillsIndex((i) => (i + 1) % skillsImages.length);
 
+//To Do List: (due by July 04 2025)
+//header Example: https://mui.com/material-ui/react-app-bar/ 
+//footer Example: find later
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BentoGrid>
         <BentoItem
-          title="Juan Ventura-Romero (EE/CS/CE Student)"
+          title="Juan Ventura-Romero (EE | CS | CE Student)"
           description={
             <>
               Hello there! I'm a Los Angeles-based engineer/developer,

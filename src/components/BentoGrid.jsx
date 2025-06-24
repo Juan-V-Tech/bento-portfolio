@@ -25,6 +25,7 @@ const BentoGrid = ({ children }) => {
         display: 'flex',
         alignItems: 'center',
         overflowX: 'hidden',
+        overflowY: 'hidden',
         boxSizing: 'border-box',
       }}
     >
