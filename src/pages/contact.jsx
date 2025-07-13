@@ -16,6 +16,7 @@ import {
     LocationOn,
     Download
 } from '@mui/icons-material';
+import PageTransition from '../components/PageTransition';
 
 const Contact = () => {
     const contactMethods = [
@@ -47,7 +48,8 @@ const Contact = () => {
             <Container maxWidth="xl" sx={{ py: 4, flex: 1 }}>
                 <Grid container spacing={4} justifyContent="center">
                     <Grid item xs={12} md={10} lg={8}>
-                        <Paper
+                        <PageTransition delay={100}>
+                            <Paper
                             elevation={6}
                             sx={{
                                 p: 4,
@@ -114,10 +116,12 @@ const Contact = () => {
                                 </Button>
                             </Box>
                         </Paper>
+                        </PageTransition>
                     </Grid>
 
                     <Grid item xs={12} md={10} lg={8}>
-                        <Paper
+                        <PageTransition delay={400}>
+                            <Paper
                             elevation={6}
                             sx={{
                                 p: 4,
@@ -140,9 +144,9 @@ const Contact = () => {
                             >
                                 Contact Methods
                             </Typography>
-                            <Grid container spacing={3}>
+                            <Grid container spacing={3} justifyContent="center">
                                 {contactMethods.map((method, index) => (
-                                    <Grid item xs={12} sm={6} md={3} key={index}>
+                                    <Grid item xs={12} sm={6} md={4} key={index}>
                                         <Card
                                             sx={{
                                                 bgcolor: 'rgba(255,255,255,0.05)',
@@ -211,6 +215,7 @@ const Contact = () => {
                                 ))}
                             </Grid>
                         </Paper>
+                        </PageTransition>
                     </Grid>
                 </Grid>
             </Container>

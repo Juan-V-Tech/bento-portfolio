@@ -23,6 +23,7 @@ import {
     MusicNote
 } from '@mui/icons-material';
 import ProfileCard from '../components/ProfileCard';
+import PageTransition from '../components/PageTransition';
 
 function About() {
     const skills = [
@@ -88,9 +89,9 @@ function About() {
 
     return (
         <Container maxWidth="xl" sx={{ py: 4, height: '100%', overflow: 'auto' }}>
-            {/* Profile Card Section */}
-            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6 }}>
-                <ProfileCard
+            <PageTransition delay={100}>
+                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6 }}>
+                    <ProfileCard
                     name={
             <>
               Juan C. Ventura
@@ -108,11 +109,12 @@ function About() {
                         window.location.href = '/contact';
                     }}
                 />
-            </Box>
+                </Box>
+            </PageTransition>
 
-            <Grid container spacing={4} justifyContent="center">
-                {/* About Me Section */}
-                <Grid item xs={12} md={10} lg={8}>
+            <PageTransition delay={400}>
+                <Grid container spacing={4} justifyContent="center">
+                    <Grid item xs={12} md={10} lg={8}>
                     <Paper
                         elevation={6}
                         sx={{
@@ -193,10 +195,14 @@ function About() {
                             </Grid>
                         </Grid>
                     </Paper>
+                    </Grid>
                 </Grid>
+            </PageTransition>
 
-                {/* Hobbies Section */}
-                {/*
+            {/* Hobbies Section */}
+            {/*
+            <PageTransition delay={600}>
+                <Grid container spacing={4} justifyContent="center">
                 <Grid item xs={12} md={10} lg={8}>
                     <Paper
                         elevation={6}
@@ -285,8 +291,7 @@ function About() {
                 </Grid>
 
                 {/* Photo Gallery Section */}
-                {/*
-                <Grid item xs={12}>
+                {/*<Grid item xs={12}>
                     <Paper
                         elevation={6}
                         sx={{
@@ -351,8 +356,9 @@ function About() {
                         </Grid>
                     </Paper>
                 </Grid>
-                */}
-            </Grid>
+                </Grid>
+            </PageTransition>
+            */}
         </Container>
     );
 }
