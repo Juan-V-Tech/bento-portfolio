@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import BentoGrid from '../components/BentoGrid';
 import BentoItem from '../components/BentoItem';
 
-const backgroundImages = [
-  'url("la-vibes.jpg")',
-  'url("la-sunset.jpg")',
-  'url("los-angleles-palm-trees.jpg")',
-];
-
 const skillsImages = [
   { src: 'react.png', alt: 'React' },
   { src: 'jsIconGreen.svg', alt: 'Node.js' },
@@ -16,25 +10,10 @@ const skillsImages = [
   { src: 'vscode.png', alt: 'VS Code' },
 ];
 
-const Home = () => {
+const Home = ({ cycleBackgroundImage }) => {
   const [cookies, setCookies] = useState(0);
-  const [bgIndex, setBgIndex] = useState(0);
   const [skillsIndex, setSkillsIndex] = useState(0);
 
-  useEffect(() => {
-    document.body.style.backgroundImage = backgroundImages[bgIndex];
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundPosition = 'center';
-    return () => {
-      document.body.style.backgroundImage = '';
-      document.body.style.backgroundSize = '';
-      document.body.style.backgroundRepeat = '';
-      document.body.style.backgroundPosition = '';
-    };
-  }, [bgIndex]);
-
-  const cycleBackgroundImage = () => setBgIndex((i) => (i + 1) % backgroundImages.length);
   const handleCookieClick = () => setCookies((c) => c + 1);
   const handleSkillsClick = () => setSkillsIndex((i) => (i + 1) % skillsImages.length);
 
@@ -45,11 +24,11 @@ const Home = () => {
           title="Juan Ventura-Romero (EE | CS | CE Student)"
           description={
             <>
-              Hello there! I'm a Los Angeles-based engineer/developer,
+              Los Angeles-based engineer/developer
               <br />
-              currently studying at El Camino College.
+              studying at El Camino College.
               <br />
-              While you're here feel free to click these blocks.
+              Click these blocks to explore!
             </>
           }
           image="profile.jpeg"
@@ -62,12 +41,6 @@ const Home = () => {
             objectFit: 'cover',
             alignSelf: 'flex-start',
           }}
-        />
-        <BentoItem
-          title="Change Background"
-          description="Click this block to cycle through LA background images"
-          onClick={cycleBackgroundImage}
-          style={{ cursor: 'pointer' }}
         />
         <BentoItem
           image="cookie2.gif"
@@ -97,13 +70,22 @@ const Home = () => {
           title="About Me"
           description={
             <>
-              As a versatile engineer and developer, I specialize in multiple areas,
-              <br /> primarily electrical, computer, and software engineering.
-              <br /> Through my passion for engineering and science, I have gained a variety of skills.
-              <br /> I invite you to look at my projects and skill sets.
+              Versatile engineer specializing in electrical,
+              <br />
+              computer, and software engineering.
+              <br />
+              Explore my projects and skills.
+              <br />
+              click to learn more!
             </>
           }
-         link ="/about"
+          onClick={() => window.location.href = '/about'}
+        />
+        <BentoItem
+          title="Change Background"
+          description="Cycle through LA background images"
+          onClick={cycleBackgroundImage}
+          style={{ cursor: 'pointer' }}
         />
         <BentoItem
           image="github.png"
@@ -117,7 +99,7 @@ const Home = () => {
             alignSelf: 'flex-start',
           }}
           title="GitHub"
-          description={<>See all my projects <br /> on my GitHub!</>}
+          description={<>View my projects<br />and repositories</>}
           link="https://github.com/Juan-V-Tech"
         />
         <BentoItem
@@ -132,12 +114,12 @@ const Home = () => {
             alignSelf: 'flex-start',
           }}
           title="LinkedIn"
-          description={<>Visit my profile on LinkedIn!<br /> Feel free to connect!</>}
+          description={<>Professional profile<br />Let's connect!</>}
           link="https://www.linkedin.com/in/juan-ventura-romero/"
         />
         <BentoItem
           title="Skills"
-          description="Frameworks, Languages, Programs, etc. Click to see what I can do!"
+          description="Languages, frameworks & tools. Click to explore!"
           image={skillsImages[skillsIndex].src}
           imgalt={skillsImages[skillsIndex].alt}
           imgstyle={{
@@ -155,11 +137,11 @@ const Home = () => {
           title="Roller Coaster Physics Simulator"
           description={
             <>
-              A physics simulator for a loop-de-loop roller coaster.
+              Physics simulation of a loop-de-loop
               <br />
-              Built with VPython.
-              <br /> 
-              Click to run the simulation online!
+              roller coaster built with VPython.
+              <br />
+              Click to run online!
             </>
           }
           image="family-guy.gif"
@@ -175,34 +157,16 @@ const Home = () => {
           link="https://glowscript.org/#/user/Juan%5fV%5fAyro/folder/MyPrograms/program/rollercoastersim"
         />
         <BentoItem
-          title="Hobbies"
-          description={
-            <>
-              Besides schooling and work I spend my time <br />
-              building mechanical keyboards, skateboarding, and playing the eletric guitar!
-            </>
-          }
-        />
-        <BentoItem
           title="Resume"
           description={
             <>
-              Check out my resume <br />
-              to see my experience and more of my skills!
+              View my experience,<br />
+              education & skills
             </>
           }
           link="/juan-ventura-romero.pdf"
         />
       </BentoGrid>
-      <footer style={{
-        textAlign: 'center',
-        padding: '20px',
-        marginTop: '20px',
-        background: 'linear-gradient(145deg, rgba(44,44,44,0.7), rgba(30,30,30,0.7))',
-        fontSize: '0.875rem'
-      }}>
-        &copy; {new Date().getFullYear()} Juan Ventura-Romero. All rights reserved.
-      </footer>
     </>
   );
 };

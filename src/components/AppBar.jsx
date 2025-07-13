@@ -17,11 +17,7 @@ function ResponsiveAppBar() {
             position="static"
             sx={{
                 background: 'transparent',
-                borderRadius: '12px',
                 boxShadow: 'none',
-                backdropFilter: 'blur(3px)',
-                outlineOffset: '-2px',
-                overflow: 'hidden',
             }}
         >
             <Container maxWidth="xl">

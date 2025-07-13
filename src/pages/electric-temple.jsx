@@ -7,7 +7,6 @@ const ElectricTemple = () => (
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        background: '#222',
         color: '#fff',
         fontFamily: 'sans-serif'
     }}>
