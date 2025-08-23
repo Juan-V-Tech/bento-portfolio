@@ -61,7 +61,7 @@ const App = () => {
           top: 0,
           left: 0,
           width: '100vw',
-          height: '100vh',
+          height: '100dvh',
           zIndex: -1,
         }}
       >
@@ -100,7 +100,7 @@ const App = () => {
         />
       </Box>
 
-      <Box sx={{ paddingTop: '100px', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+       <Box sx={{ paddingTop: '100px', minHeight: '100dvh', height: '100dvh', display: 'flex', flexDirection: 'column', overflowY: 'auto', overscrollBehavior: 'none', WebkitOverflowScrolling: 'touch' }}>
         <Box sx={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home cycleBackgroundImage={cycleBackgroundImage} />} />
