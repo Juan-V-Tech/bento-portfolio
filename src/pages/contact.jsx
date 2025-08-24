@@ -95,7 +95,7 @@ const Contact = () => {
                                             backgroundColor: 'rgba(255,255,255,0.1)'
                                         }
                                     }}
-                                    href="/juan-ventura-romero.pdf"
+                                    href="/Juan_Ventura_Resume_August_2025.pdf"
                                     target="_blank"
                                 >
                                     Download Resume

@@ -24,9 +24,11 @@ const Home = ({ cycleBackgroundImage }) => {
           title="Juan Ventura-Romero (EE | CS | CE Student)"
           description={
             <>
-              Los Angeles-based engineer/developer
+              Los Angeles-based
               <br />
-              studying at El Camino College.
+              engineer & developer studying
+              <br />
+              at El Camino College.
               <br />
               Click these blocks to explore!
             </>
@@ -82,6 +84,22 @@ const Home = ({ cycleBackgroundImage }) => {
           onClick={() => window.location.href = '/about'}
         />
         <BentoItem
+          title="Skills"
+          description={<>Languages, frameworks & tools. <br /> Click to explore!</>}
+          image={skillsImages[skillsIndex].src}
+          imgalt={skillsImages[skillsIndex].alt}
+          imgstyle={{
+            width: 60,
+            height: 60,
+            borderRadius: 8,
+            objectFit: 'contain',
+            display: 'block',
+            margin: '0 auto',
+          }}
+          onClick={handleSkillsClick}
+          style={{ cursor: 'pointer' }}
+        />
+        <BentoItem
           title="Change Background"
           description="Cycle through LA background images"
           onClick={cycleBackgroundImage}
@@ -118,20 +136,19 @@ const Home = ({ cycleBackgroundImage }) => {
           link="https://www.linkedin.com/in/juan-ventura-romero/"
         />
         <BentoItem
-          title="Skills"
-          description="Languages, frameworks & tools. Click to explore!"
-          image={skillsImages[skillsIndex].src}
-          imgalt={skillsImages[skillsIndex].alt}
+          image="Handshake_avatar_square.png"
+          imgalt="Handshake Logo (no work ;w;)"
           imgstyle={{
             width: 60,
             height: 60,
             borderRadius: 8,
+            marginLeft: '0.5rem',
             objectFit: 'contain',
-            display: 'block',
-            margin: '0 auto',
+            alignSelf: 'flex-start',
           }}
-          onClick={handleSkillsClick}
-          style={{ cursor: 'pointer' }}
+          title="Handshake"
+          description={<>Follow me on Handshake!</>}
+          link="https://elcamino.joinhandshake.com/profiles/juan-ventura-romero"
         />
         <BentoItem
           title="Roller Coaster Physics Simulator"
@@ -164,7 +181,7 @@ const Home = ({ cycleBackgroundImage }) => {
               education & skills
             </>
           }
-          link="/juan-ventura-romero.pdf"
+          link="/Juan_Ventura_Resume_August_2025.pdf"
         />
       </BentoGrid>
     </>
