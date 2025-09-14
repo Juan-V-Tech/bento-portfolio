@@ -33,7 +33,7 @@ const Home = ({ cycleBackgroundImage }) => {
               Click these blocks to explore!
             </>
           }
-          image="profile.jpeg"
+          image="JuanV.JPG"
           imgalt="my face LOL why not work tho?"
           imgstyle={{
             width: 100,
